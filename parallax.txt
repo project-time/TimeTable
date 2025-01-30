@@ -1,0 +1,105 @@
+<!DOCTYPEhtml>
+<htmllang="en">
+    <head>
+        <metacharset="UTF-8">
+        <metaname="viewport"content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <linkrel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            body{
+                margin: 0;
+            }
+
+            /* nav start  */
+            nav{
+                height: 80px;
+                background-color: black;
+                display: flex;
+                padding: 10px;
+                position: sticky;
+                top: 0;
+            }
+            
+            .a1{
+                width: 100%;
+            }
+            .a1img{
+                margin-left: 20px;
+            }
+            .a2{
+                width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+                margin-top: 5px;
+            }
+            a{
+                text-decoration: none;
+                color: aliceblue;
+                /* text-shadow: 2px 2px 5px red; */
+            }
+           
+
+
+            /* nav end  */
+
+            /* s1 start  */
+
+            .x{
+                position: sticky;
+                top: 0;
+            }
+            #s1,#s2,#s3{
+                position: relative;
+            }
+            #i2,#i3,#i4{
+                width: 100%;
+            }
+            #s1h1,#s2h1,#s3h1{
+                position: absolute;
+                font-size: 50px;
+                top: 100px;
+                right: 150px;
+                color: aliceblue;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <divclass="a1">
+                <imgid="i1"src="10001.png"alt="">
+            </div>
+            
+            <divclass="a2">
+                <ahref=""id="show"><h3>Home</h3></a>
+                <ahref=""><h3>About</h3></a>
+                <ahref=""><h3>Contact</h3></a>
+            </div>
+            
+        </nav>
+
+        <divclass="x">
+            <sectionid="s1">
+                <imgid="i2"src="10002.jpg"alt="">
+                <h1>Huracan Sport</h1>
+            </section>
+        </div>
+        <divclass="x">
+            <sectionid="s2">
+                <imgid="i3"src="10003.jpg"alt="">
+                <h1>Huracan</h1>
+            </section>
+        </div>
+        <divclass="x">
+            <sectionid="s3">
+                <imgid="i4"src="10004.jpeg"alt="">
+                <h1>Urus</h1>
+            </section>
+        </div>
+        
+
+    </body>
+
+</html>
+
