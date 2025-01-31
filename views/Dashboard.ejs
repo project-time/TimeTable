@@ -19,16 +19,17 @@
         <a href="#" class="logo">Smart Time Table Scheduler</a>
         </div>
         <div class="a2">
-            <a href="#s1">Home</a>
         <a href="#s2">About Us</a>
         <a href="#s3">Contact Us</a>
         <a href="#s4">Feedback</a>
-        <a href="#s5">Profile</a>
+       
         </div>
     </nav>
 <div class="x">
     <section id="s1">
         <img id="i1" src="/images/Wave.svg">
+        <h1>Smart Time Table Scheduler</h1>
+        <h2>Work in Multi Classes | Easy to Generate</h2>
         <a href="/Signup">
             <button class="btn">
                 Get Started&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -45,9 +46,35 @@
 <div class="x">
     <section id="s4"><img id="i4" src="/images/Sprinkle.svg"><h1>Feedback Section</h1></section>
 </div>
-<div class="x">
-    <section id="s5"><img id="i5" src="/images/Sprinkle.svg"><h1>Profile Section</h1></section>
-</div>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.querySelector("nav");
+        const homeSection = document.getElementById("s1");
 
+        function toggleNavbar() {
+            const scrollPosition = window.scrollY;
+            const homeHeight = homeSection.offsetHeight;
+
+            // Show navbar only if the user is at the top (home section)
+            if (scrollPosition < homeHeight - 50) {
+                navbar.style.display = "flex";  // Show navbar
+            } else {
+                navbar.style.display = "none";  // Hide navbar
+            }
+        }
+
+        // Run the function when scrolling
+        window.addEventListener("scroll", toggleNavbar);
+
+        // Hide navbar when an anchor link is clicked
+        document.querySelectorAll("nav a").forEach(anchor => {
+            anchor.addEventListener("click", function () {
+                navbar.style.display = "none";
+            });
+        });
+    });
+</script>
+
+</script>
 </html>

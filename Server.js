@@ -8,7 +8,7 @@ var user = require("./Database/User");
 var express = require('express');
 const path = require('path');
 
-mongoose.connect("mongodb+srv://bhaargav04:2005@cluster04.hvozw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster04/Google");
+mongoose.connect("mongodb+srv://projecttime2025:marvelxdc%4026@clusterprojecttime.9npkc.mongodb.net/?retryWrites=true&w=majority&appName=Clusterprojecttime");
 var app = express();
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'));
