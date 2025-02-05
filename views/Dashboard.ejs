@@ -4,77 +4,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Smart Time Table Scheduler</title>
-    <link rel="stylesheet" href="/CSS/Dashboard.css">
-    <link rel="icon" href="/images/calendar2.png" type="image/png" size="16x16">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        header {
+            position: sticky;
+            top: 1px;
+            background: #00684A;
+            color: white;
+            left: 0.5%;
+            width: 99%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+            border-radius: 30px;
+
+        }
+
+        header .logo {
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 24px;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        header ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header ul li {
+            list-style: none;
+        }
+
+        header ul li a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        #home {
+            background-image: url("Wave.svg");
+            background-size: cover;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+
+        #home h3 {
+            color: #001E2B;
+            font-size: 25px;
+            padding: 40px 0px 0px 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
 
 
+        #about {
+            background-color: #001E2B;
+            color: rgb(255, 255, 255);
+            width: 100%;
+            height: 100vh;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #about h3 {
+            text-decoration: underline;
+            font-style: italic;
+            font-size: 25px;
+            padding: 100px 0px 0px 130px;
+            letter-spacing: 2px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        #about h3:hover {
+            font-size: 30px;
+        }
+
+
+        #about p {
+            padding: 40px 0px 0px 100px;
+            letter-spacing: 2px;
+
+        }
+
+        header ul li:hover {
+            transform: scale(1.1);
+        }
+
+        .expand-bar {
+            width: auto;
+            height: auto;
+            background-color: white;
+            color: #001E2B;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 0px;
+            transition: all 0.3s ease;
+        }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            background-color: white;
+            color: black;
+            padding: 0 10px;
+            font-size: 18px;
+            transition: max-height 0.3s ease;
+        }
+
+        .expand-bar:hover .content {
+            max-height: 100px;
+            padding: 5px;
+        }
+
+        .exp-bar {
+            width: auto;
+            height: auto;
+            background-color: white;
+            color: #001E2B;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 0px;
+            transition: all 0.3s ease;
+        }
+
+        .feed {
+            max-height: 0px;
+            overflow: hidden;
+            background-color: white;
+            color: #001E2B;
+            padding: 0 10px;
+            font-size: 18px;
+            transition: max-height 0.3s ease;
+        }
+
+        .feed textarea {
+            width: 400px;
+            height: 200px;
+            border: solid;
+            border-color: #001E2B;
+
+        }
+
+        .exp-bar:hover .feed {
+            max-height: 600px;
+            padding: 10px;
+        }
+
+        .btn {
+            background: #001E2B;
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background: #00684A;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 
 <body>
-    <nav>
-        <div class="a1">
-        <a href="#" class="logo">Smart Time Table Scheduler</a>
+    <header>
+        <a href="#" class="logo">SMART TIME TABLE SCHEDULER</a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#signin">Signin&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"
+                        style="color: #ffffff;"></i></a></li>
+        </ul>
+    </header>
+
+    <div id="home">
+        <h3>WELCOME TO SMART TIME TABLE SCHEDULER :)<br><br>Optimize Your Schedule, Maximize Your Time!<br><br>EASY
+            ACCESS<BR><BR>FAST AND SECURE</h3>
+    </div>
+    <div id="about">
+        <h3>About Us</h3>
+        <p>Welcome to Smart Timetable Scheduler, the ultimate solution for colleges for class scheduling. Our
+            platform offers an intuitive, automated approach to managing timetables, ensuring no overlaps and optimizing
+            resources. With real-time updates and a user-friendly interface, faculty can access schedules with
+            ease. Designed to save time, our tool simplifies the scheduling process for everyone. Stay organized,
+            efficient,
+            and ahead with Smart Timetable Scheduler. Empowering educational institutions for a smarter,hassle-free
+            experience.<br><br></p>
+        <div id="contact">
+            <div class="expand-bar">
+                Contact
+                <div class="content">
+                    E-Mail : <a href="mailto:projecttime2025@gmail.com">projecttime2025@gmail.com</a>
+                </div>
+            </div>
         </div>
-        <div class="a2">
-        <a href="#s2">About Us</a>
-        <a href="#s3">Contact Us</a>
-        <a href="#s4">Feedback</a>
-       
+        <br>
+        <div id="feedback">
+            <div class="exp-bar">
+                Feedback
+                <div class="feed">
+                    We always value your feedback<br><textarea placeholder="Type your Feedback"></textarea><br>
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+            </div>
         </div>
-    </nav>
-<div class="x">
-    <section id="s1">
-        <img id="i1" src="/images/Wave.svg">
-        <h1>Smart Time Table Scheduler</h1>
-        <h2>Work in Multi Classes | Easy to Generate</h2>
-        <a href="/Signup">
-            <button class="btn">
-                Get Started&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </button>
-        </a>
-    </section>
-</div>
-<div class="x">
-    <section id="s2"><img id="i2" src="/images/Sprinkle.svg"> <h1>About Us Section</h1></section>
-</div>
-<div class="x">
-    <section id="s3"><img id="i3" src="/images/Sprinkle.svg"> <h1>Contact Us Section</h1></section>
-</div>
-<div class="x">
-    <section id="s4"><img id="i4" src="/images/Sprinkle.svg"><h1>Feedback Section</h1></section>
-</div>
+
+
+    </div>
+
+
+
 </body>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const navbar = document.querySelector("nav");
-        const homeSection = document.getElementById("s1");
 
-        function toggleNavbar() {
-            const scrollPosition = window.scrollY;
-            const homeHeight = homeSection.offsetHeight;
-
-            // Show navbar only if the user is at the top (home section)
-            if (scrollPosition < homeHeight - 50) {
-                navbar.style.display = "flex";  // Show navbar
-            } else {
-                navbar.style.display = "none";  // Hide navbar
-            }
-        }
-
-        // Run the function when scrolling
-        window.addEventListener("scroll", toggleNavbar);
-
-        // Hide navbar when an anchor link is clicked
-        document.querySelectorAll("nav a").forEach(anchor => {
-            anchor.addEventListener("click", function () {
-                navbar.style.display = "none";
-            });
-        });
-    });
-</script>
-
-</script>
 </html>
