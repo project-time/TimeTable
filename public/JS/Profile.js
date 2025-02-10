@@ -171,3 +171,4 @@ function downloadTimetablePDF() {
   }
   html2pdf().from(element).save(fileName);
 }
+module.exports = { addClass, removeClass, addStaff, removeStaff, generateTimetables, classes, globalStaff };

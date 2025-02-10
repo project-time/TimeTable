@@ -2,154 +2,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-html {
-    scroll-behavior: smooth;
-}
-
 
 body {
     overflow-x: hidden;
-    overflow-y: auto;
 }
 
-nav {
-    font-size: 24px;
-    height: 58px;
+header {
     position: sticky;
     top: 1px;
     background: #00684A;
-    border-radius: 25px;
     color: white;
-    width: 98%;
-    left: 1%;
+    left: 0.5%;
+    width: 99%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    /* align-self: center; */
-    padding: 20px;
+    padding: 10px 20px;
     z-index: 1000;
-    a{
-        align-items: center;
-    }
-    }
-.a1{
-    width: 100%;
-    display: flex;
-    justify-content: left;
-}
-.a1 img{
-    margin-left: 20px;
-}
-.a2{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-right: -30px;
-   margin-left: 130px;
-}
-a{
-    text-decoration: none;
-    color: aliceblue;
-    /* text-shadow: 2px 2px 5px red; */
+    border-radius: 30px;
+
 }
 
-.x{
-    position: sticky;
-    top: 0;
-}
-#s1,#s2,#s3,#s4{
-    position: relative;
-    min-height: 100vh; /* Ensure full screen height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#i1,#i2,#i3,#i4{
-    width: 100%;
-    height: 100vh;
-}
-#s1 h1,#s2 h1,#s3 h1,#s4 h1{
-    position: absolute;
-    font-size: 50px;
-    top: 100px;
-    right: 150px;
-    color: aliceblue;
-}
-#s1 h2{
-    position: absolute;
-    font-size: 20px;
-    top: 100px;
-    right: 150px;
-}
-/* Home Section Styling */
-#s1 {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-    h1{
-        color: black;
-        left: -420px;
-        top: 80px;
-    }
-    h2{
-        top: 150px;
-        left: -420px;
-        font-weight: lighter;
-    }
-}
-
-/* Button Styling */
-.btn {
-    font-weight: 550;
-    padding: 12px 24px;
-    font-size: 24px;
-    color: #00684A;
-    background-color: white;
-    border: 2px solid #00684A;
-    border-radius: 15px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: center;
-    transition: all 0.3s ease-in-out;
-    position: absolute;
-    bottom: 40%;
-    right: 21%;
-}
-
-/* Icon Styling */
-.btn i {
-    font-size: 1.2em;
-}
-
-/* Hover Effect */
-.btn:hover {
-    background-color: white;
-    color: #00684A;
-    transform: scale(1.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .btn {
-        font-size: 18px;
-        padding: 10px 20px;
-        bottom: 10%;
-    }
-}
-
-/* header .logo {
+header .logo {
     font-weight: bold;
     text-decoration: none;
-    font-size: 1.5em;
-    text-transform: uppercase;
+    font-size: 24px;
     letter-spacing: 2px;
     color: white;
 }
@@ -167,55 +46,140 @@ header ul li {
 header ul li a {
     margin: 0 15px;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 18px;
     letter-spacing: 2px;
     font-weight: bold;
     color: white;
     transition: color 0.3s ease;
 }
 
-.section {
+#home {
+    background-image: url("/images/Wave.svg");
+    background-size: cover;
     position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 2em;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
 }
 
-#home {
-    background: url('/images/Wave.svg') no-repeat;
-    background-size: cover;
+#home h3 {
+    color: #001E2B;
+    font-size: 25px;
+    padding: 40px 0px 0px 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
-
-
 
 
 #about {
-    background-color: url('/images/Sprinkle.svg') no-repeat;
-    background-size: cover;
+    background-color: #001E2B;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100vh;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-#contact {
-    background-size: cover;
-    background: #8a5c5c;
+#about h3 {
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 25px;
+    padding: 100px 0px 0px 130px;
+    letter-spacing: 2px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#feedback {
-    background-size: cover;
-    background: #23eccb;
+#about h3:hover {
+    font-size: 30px;
 }
 
-#profile {
 
-    background-size: cover;
-    background: #0816e4;
-} */
+#about p {
+    padding: 40px 0px 0px 100px;
+    letter-spacing: 2px;
+
+}
+
+header ul li:hover {
+    transform: scale(1.1);
+}
+
+.expand-bar {
+    width: auto;
+    height: auto;
+    background-color: white;
+    color: #001E2B;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: white;
+    color: black;
+    padding: 0 10px;
+    font-size: 18px;
+    transition: max-height 0.3s ease;
+}
+
+.expand-bar:hover .content {
+    max-height: 100px;
+    padding: 5px;
+}
+
+.exp-bar {
+    width: auto;
+    height: auto;
+    background-color: white;
+    color: #001E2B;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+}
+
+.feed {
+    max-height: 0px;
+    overflow: hidden;
+    background-color: white;
+    color: #001E2B;
+    padding: 0 10px;
+    font-size: 18px;
+    transition: max-height 0.3s ease;
+}
+
+.feed textarea {
+    width: 400px;
+    height: 200px;
+    border: solid;
+    border-color: #001E2B;
+
+}
+
+.exp-bar:hover .feed {
+    max-height: 600px;
+    padding: 10px;
+}
+
+.btn {
+    background: #001E2B;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background: #00684A;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
