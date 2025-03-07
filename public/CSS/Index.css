@@ -275,12 +275,12 @@ footer {
         padding-right: 350px;
     }
     .bt button {
-        margin-top: 350px; /* Adjusted to align below "FAST AND SECURE" */
+        margin-top: 350px; 
         font-size: 12px;
         margin-left:0px;
-        border-color: #00796B; /* Changed to green */
+        border-color: #00796B; 
         display: flex;
-        color: #00796B; /* Changed text color to green */
+        color: #00796B; 
         text-decoration: none;
     }
 

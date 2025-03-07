@@ -137,14 +137,6 @@ table td {
   margin: 30px auto;
 }
 
-/* #timetableContainer th {
-  background: #E1F5FE;
-}
-
-#timetableContainer td {
-  background: #E1F5FE;
-} */
-
 button {
   margin: 15px auto;
   display: block;
@@ -246,6 +238,4 @@ button:hover {
   transform: scale(1.1);
   color: red;
   }
-  
-  
 }

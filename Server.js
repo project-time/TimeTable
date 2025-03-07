@@ -31,12 +31,10 @@ passport.use(new passportLocal(user.authenticate()));
 passport.serializeUser(user.serializeUser());
 passport.deserializeUser(user.deserializeUser());
 
-// Root route
 app.get("/", function (req, res) {
     res.render("Index");
 });
 
-// Signin routes
 app.get("/Signin", function (req, res) {
     res.render("Signin", { error: null });
 });
@@ -46,8 +44,7 @@ app.post("/Signin", function (req, res, next) {
         if (err) {
             return next(err);
         }
-        if (!user) {
-            // Authentication failed, render Signin with error
+        if (!user) { 
             return res.render("Signin", { error: "Enter the Username and Password Correctly" });
         }
         req.logIn(user, function (err) {
@@ -59,12 +56,10 @@ app.post("/Signin", function (req, res, next) {
     })(req, res, next);
 });
 
-// Profile route
 app.get("/Profile", function (req, res) {
     res.render("Profile");
 });
 
-// Signup routes (for completeness)
 app.get("/Signup", function (req, res) {
     res.render("Signup", { error: null });
 });

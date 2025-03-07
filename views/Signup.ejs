@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,34 +8,28 @@
     <link rel="icon" href="/images/calendar2.png" type="image/png" size="16x16">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
-        
-        <% if (error) { %>
+         <% if (error) { %>
             alert(<%- JSON.stringify(error) %>); // Safely escape error message
         <% } %>
-
         function nam(event) {
             if (!/[a-z A-Z]/.test(event.key))
                 event.preventDefault();
         }
-
         function usrnam(event) {
             if (!/[0-9a-zA-Z@.]/.test(event.key))
                 event.preventDefault();
         }
-
         function psw(event) {
             if (!/[0-9a-zA-Z!@#$&]/.test(event.key)) {
                 event.preventDefault();
             }
         }
-
         function checkPasswordStrength() {
             let password = document.getElementById("password").value;
             let strengthText = document.getElementById("passwordStrength");
             let passwordRegexWeak = /^.{0,4}$/;
             let passwordRegexMedium = /^(?=.*[0-9])(?=.*[!@#$&])[^\s]{5,7}$/;
             let passwordRegexStrong = /^(?=.*[0-9])(?=.*[!@#$&])[^\s]{8,}$/;
-
             if (passwordRegexWeak.test(password)) {
                 strengthText.innerHTML = "Password Strength : Weak";
                 strengthText.className = "password-strength weak";
@@ -50,7 +43,6 @@
         }
     </script>
 </head>
-
 <body>
     <form id="signupForm" method="post">
         <div class="container">
@@ -58,21 +50,17 @@
                 <label for="firstname">First Name</label>
                 <input type="text" onkeypress="nam(event)" onpaste="return false" oncut="return false"
                     oncopy="return false" name="firstname" placeholder="Enter your First Name" required>
-
                 <label for="lastname">Last Name</label>
                 <input type="text" onkeypress="nam(event)" onpaste="return false" oncut="return false"
                     oncopy="return false" name="lastname" placeholder="Enter your Last Name" required>
-
                 <label for="username">Username</label>
                 <input type="text" id="username" onkeypress="usrnam(event)" onpaste="return false" oncut="return false"
                     oncopy="return false" name="username" placeholder="Email" title="Your Email is your Username" required>
-
                 <label for="password">Password</label>
                 <input type="text" id="password" name="password" onkeypress="psw(event)" onpaste="return false"
                     oncut="return false" oncopy="return false" placeholder="Enter your Password" required
                     oninput="checkPasswordStrength()" title="(Special Characters (!@#$&) are allowed)">
                 <span id="passwordStrength" style="font-size: 14px; font-weight: bold;"></span>
-
                 <button>Submit</button>
                 <div class="s1">
                     <label>Already have an account ? <i class="fa fa-arrow-right" aria-hidden="true"></i></label>
@@ -82,5 +70,4 @@
         </div>
     </form>
 </body>
-
 </html>
