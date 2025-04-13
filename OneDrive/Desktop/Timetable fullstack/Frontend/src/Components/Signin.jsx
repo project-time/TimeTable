@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import './Signin.css'
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import './Signin.css';
 
 const Signin = () => {
-  // State to manage form inputs
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   // Handle input changes
   const handleChange = (e) => {
@@ -16,41 +17,59 @@ const Signin = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Here you can handle the form submission logic, like making an API call
+
+    try {
+      const response = await fetch("https://timetable-backend-otdy.onrender.com/signin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log("Signin successful!");
+        localStorage.setItem("token", data.token); // Store JWT token
+        navigate("/Profile"); // Redirect to Profile page
+      } else {
+        console.error("Signin failed:", data.message);
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
-
-      <div className="bodysignin">
-        <form onSubmit={handleSubmit}>
-          <div className="containersignin">
-            <div className="input-groupsignin">
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                name="username"
-                placeholder="Enter your username"
-                value={formData.username}
-                onChange={handleChange}
-                required
-              />
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Enter your password"
-                value={formData.password}
-                onChange={handleChange}
-                required
-              />
-              <Link to="/Profile"><button type="submit">Submit</button></Link>
-            </div>
+    <div className="bodysignin">
+      <form onSubmit={handleSubmit}>
+        <div className="containersignin">
+          <div className="input-groupsignin">
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              placeholder="Enter your username"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <button type="submit">Submit</button>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
+    </div>
   );
 };
 

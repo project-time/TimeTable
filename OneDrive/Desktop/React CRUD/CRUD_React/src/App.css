@@ -1,0 +1,7 @@
+input::placeholder {
+    color: #aaa;
+}
+
+button {
+    min-width: 80px;
+}
