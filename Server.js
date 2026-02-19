@@ -1,3 +1,6 @@
+require("dotenv").config();
+
+
 var express = require('express');
 var bp = require('body-parser');
 var mongoose = require('mongoose');
@@ -21,11 +24,9 @@ app.use(require("express-session")({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb+srv://projecttime2025:marvelxdc%4026@clusterprojecttime.9npkc.mongodb.net/?retryWrites=true&w=majority&appName=Clusterprojecttime", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log("MongoDB Connection Error:", err));
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log("MongoDB Connected"))
+.catch(err => console.log("MongoDB Connection Error:", err));
 
 passport.use(new passportLocal(user.authenticate()));
 passport.serializeUser(user.serializeUser());
