@@ -1,1 +1,1 @@
-LIVE https://timetable-ugcn.onrender.com/
+LIVE https://timetable-ngnu.onrender.com/
